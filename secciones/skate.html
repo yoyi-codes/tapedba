@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TAPED BA - Skate</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/estilos.css" rel="stylesheet">
+
+    <!-- iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body class="bg-black">
+
+
+    <header>
+        <nav class="navbar navbar-dark bg-custom-dark">
+            <div class="container-fluid">
+
+
+                <a class="navbar-brand" href="../index.html">
+                    <picture>
+                        <!-- Imagen para Tablet (768px+) -->
+                        <source srcset="../multimedia/logo-tablet.png" media="(min-width: 768px)">
+                        <!-- Imagen por defecto (Móvil) -->
+                        <img src="../multimedia/logo-mobile.png" alt="Logo de TAPED BA" class="navbar-logo">
+                    </picture>
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuCollapse"
+                    aria-controls="menuCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link text-white me-3" aria-label="Buscar"><i
+                            class="bi bi-search fs-5"></i></a>
+                    <a href="#" class="nav-link text-white" aria-label="Carrito de compras">
+                        <i class="bi bi-cart fs-5 position-relative">
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                style="font-size: 0.6em;">0</span>
+                        </i>
+                    </a>
+                </div>
+
+                <!-- Menú Desplegable (Pantalla completa) -->
+                <div class="collapse navbar-collapse" id="menuCollapse">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="skate.html">Skate</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="ropaycalzado.html">Ropa y Calzado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div id="topBarCarousel" class="carousel slide carousel-fade bg-custom-red" data-bs-ride="carousel">
+            <div class="carousel-inner text-center py-2">
+                <div class="carousel-item active py-2" data-bs-interval="1000">
+                    <a href="../index.html" class="text-white text-decoration-none small">
+                        Envío gratis a partir de $149.999
+                    </a>
+                </div>
+                <div class="carousel-item py-2" data-bs-interval="1000">
+                    <a href="../index.html" class="text-white text-decoration-none small">
+                        3 y 6 Cuotas Sin Interés
+                    </a>
+                </div>
+                <div class="carousel-item py-2" data-bs-interval="1000">
+                    <a href="../index.html" class="text-white text-decoration-none small">
+                        Envíos a todo el país
+                    </a>
+                </div>
+                <div class="carousel-item py-2" data-bs-interval="1000">
+                    <a href="../index.html" class="text-white text-decoration-none small">
+                        Nuevos ingresos de Skate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="skate-banner position-relative text-white">
+            <img src="../multimedia/banner-skate.jpg" class="img-fluid w-100" alt="Banner de Skate">
+            <div class="skate-banner-caption">
+                <h1 class="skate-title">SKATE</h1>
+                <p class="skate-subtitle">Accesorios para Skateboarding</p>
+            </div>
+        </section>
+
+        <!-- 
+        Lista de Productos (¡CAMBIO A GRILLA EN TABLET!)
+        -->
+        <section class="product-list py-5">
+            <div class="container">
+
+                <!--  Row para la grilla de tablet -->
+                <div class="row g-4">
+
+                    <!-- Añadi "col-md-4" -->
+                    <div class="col-12 col-md-4">
+                        <div class="card product-card-skate border-0 mb-4 mb-md-0">
+                            <img src="../multimedia/boardazul-mobile.jpg" class="card-img-top"
+                                alt="Deck Taped Rewind Series Azul">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="card-title">REWIND SERIES - DECKS</h5>
+                                        <p class="card-text fw-bold">$55.000</p>
+                                    </div>
+                                    <a href="#" class="btn-heart"><i class="bi bi-heart fs-4"></i></a>
+                                </div>
+                                <a href="#" class="btn btn-custom-blue w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-4">
+                        <div class="card product-card-skate border-0 mb-4 mb-md-0">
+                            <img src="../multimedia/skateboard-mobile.png" class="card-img-top"
+                                alt="Deck Taped Side A Collection">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="card-title">SIDE A COLLECTION - DECKS</h5>
+                                        <p class="card-text fw-bold">$55.000</p>
+                                    </div>
+                                    <a href="#" class="btn-heart"><i class="bi bi-heart fs-4"></i></a>
+                                </div>
+                                <a href="#" class="btn btn-custom-blue w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-4">
+                        <div class="card product-card-skate border-0 mb-4 mb-md-0">
+                            <img src="../multimedia/boardwood-mobile.jpg" class="card-img-top"
+                                alt="Deck Taped Side A Collection">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="card-title">REWIND SERIES - DECKS</h5>
+                                        <p class="card-text fw-bold">$55.000</p>
+                                    </div>
+                                    <a href="#" class="btn-heart"><i class="bi bi-heart fs-4"></i></a>
+                                </div>
+                                <a href="#" class="btn btn-custom-blue w-100 mt-2">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="tira-grafica bg-black">
+            <img src="../multimedia/tiragrafica.png" class="img-fluid w-100" alt="Tira gráfica decorativa Taped">
+        </section>
+
+
+
+
+        <section class="related-products py-5 bg-black text-white">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">
+                    TAL VEZ TE PUEDA INTERESAR
+                </h2>
+
+
+                <!-- ¡CAMBIO! Carrusel SÓLO para móvil (oculto en tablet) -->
+                <div id="carouselRelated" class="carousel slide d-md-none" data-bs-ride="carousel">
+                    <!-- (Añadí indicadores) -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselRelated" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselRelated" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselRelated" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="ropaycalzado.html" class="text-decoration-none">
+                                <div class="card related-card border-0">
+                                    <img src="../multimedia/shoebox2.jpg" class="card-img-top" alt="Caja Azul Taped">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Taped Shoebox</h5>
+                                        <p class="card-text fw-bold">$15.000</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="ropaycalzado.html" class="text-decoration-none">
+                                <div class="card related-card border-0">
+                                    <img src="../multimedia/hoodie-mobile.jpg" class="card-img-top"
+                                        alt="Hoodie Blanco Taped">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Taped Premium Hoodie</h5>
+                                        <p class="card-text fw-bold">$120.000</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="ropaycalzado.html" class="text-decoration-none">
+                                <div class="card related-card border-0">
+                                    <img src="../multimedia/boardazul-mobile.jpg" class="card-img-top"
+                                        alt="Deck Taped Rewind Series Azul">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rewind Series - Deck</h5>
+                                        <p class="card-text fw-bold">$55.000</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ¡NUEVO! Grilla SÓLO para tablet+ -->
+                <!-- "d-none" (oculto en móvil) "d-md-flex" (visible en tablet) -->
+                <div class="row d-none d-md-flex g-4">
+                    <div class="col-md-4">
+                        <a href="ropaycalzado.html" class="text-decoration-none">
+                            <div class="card related-card border-0">
+                                <img src="../multimedia/shoebox2.jpg" class="card-img-top" alt="Caja Azul Taped">
+                                <div class="card-body">
+                                    <h5 class="card-title">Taped Shoebox</h5>
+                                    <p class="card-text fw-bold">$15.000</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="ropaycalzado.html" class="text-decoration-none">
+                            <div class="card related-card border-0">
+                                <img src="../multimedia/hoodie-mobile.jpg" class="card-img-top"
+                                    alt="Hoodie Blanco Taped">
+                                <div class="card-body">
+                                    <h5 class="card-title">Taped Premium Hoodie</h5>
+                                    <p class="card-text fw-bold">$120.000</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="ropaycalzado.html" class="text-decoration-none">
+                            <div class="card related-card border-0">
+                                <img src="../multimedia/boardazul-mobile.jpg" class="card-img-top"
+                                    alt="Deck Taped Rewind Series Azul">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rewind Series - Deck</h5>
+                                    <p class="card-text fw-bold">$55.000</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- 
+      Footer (¡CAMBIO!)
+      "flex-column" para móvil y "flex-md-row" para tablet.
+    -->
+    <footer class="footer-section bg-custom-blue py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+            <div class="mb-3 mb-md-0">
+                <img src="../multimedia/iso-footer.png" alt="Isotipo Taped" class="footer-logo">
+            </div>
+
+            <div class="text-center mb-3 mb-md-0">
+                <p class="footer-text">© 2025 TAPED. Todos los derechos reservados.</p>
+                <p class="footer-text">
+                    Hecho por Johana Dávila, Diseño Multimedial DMN2BV
+                </p>
+            </div>
+
+            <div class="footer-social-icons">
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
