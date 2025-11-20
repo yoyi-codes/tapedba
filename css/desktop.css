@@ -1,0 +1,860 @@
+/* DESKTOP.CSS - SE APLICA SOLO EN >= 992px*/
+
+/* =========================================
+   LIMITAR ANCHO MÁXIMO A 1440px (BOXED LAYOUT)
+   Se implementó un contenedor de ancho máximo (max-width) de 1440px en la versión Desktop para mantener la integridad del diseño
+    la composición de las imágenes y la legibilidad de los textos en monitores de alta resolución (Ultrawide/4K).
+   ========================================= */
+
+@media (min-width: 1441px) {
+
+    /* 1. Pinta el fondo "vacío" de los costados */
+    html {
+        background-color: #1a1a1a;
+        /* Gris oscuro elegante para los bordes */
+    }
+
+    /* 2. Centra y limita todo el sitio */
+    body {
+        max-width: 1440px;
+        margin: 0 auto;
+        /* Esto centra la caja en la pantalla */
+        position: relative;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        /* Sombra para separar el sitio del fondo */
+        background-color: #F7F9EB;
+        /* Asegura que el fondo crema se mantenga adentro */
+    }
+
+    /* 3. Asegura que los elementos "fixed" (si hubiera) respeten el ancho */
+    .navbar,
+    .footer-section {
+        max-width: 1440px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+/* 1. AJUSTES GLOBALES DESKTOP */
+body {
+    background-color: #F7F9EB !important;
+    /* Fondo claro */
+    color: #000000;
+}
+
+/* SOBRESCRIBIR COLOR DE TOPBAR EN DESKTOP */
+#topBarCarousel {
+    background-color: #000000 !important;
+    /* Fuerza Negro sobre el Rojo del HTML */
+}
+
+/* Tipografías específicas Desktop */
+h1,
+h2,
+h3,
+.navbar-brand,
+.btn,
+.nav-link,
+.display-3,
+.display-5,
+.display-6,
+.section-title {
+    font-family: "Unbounded", sans-serif !important;
+}
+
+p,
+.lead,
+.card-text,
+.footer-text,
+input,
+textarea {
+    font-family: "Inter", sans-serif;
+}
+
+/* 2. NAVBAR DESKTOP (WIRE-FRAME EXACTO) */
+.navbar {
+    background-color: #F7F9EB !important;
+    padding-top: -160px !important;
+    padding-bottom: 5px !important;
+    height: auto;
+}
+
+.navbar .container-fluid {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO AJUSTADO */
+.navbar-brand {
+    margin-right: auto;
+    padding: 0;
+    border: none !important;
+    line-height: 0;
+}
+
+.navbar-logo {
+    width: 170px;
+    /* Más pequeño */
+    height: auto;
+    display: block;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* ÍCONOS (ARRIBA A LA DERECHA) */
+.icons-desktop {
+    position: absolute;
+    top: 25px;
+    /* Bien arriba */
+    right: 30px;
+    /* Pegado a la derecha */
+    display: flex !important;
+    gap: 15px;
+    margin: 0 !important;
+    z-index: 20;
+}
+
+.icons-desktop i {
+    color: #000 !important;
+    font-size: 20px;
+    /* Tamaño sutil */
+    cursor: pointer;
+}
+
+/* MENÚ DE LINKS */
+.navbar-collapse {
+    flex-grow: 0;
+    margin-top: 15px;
+    /* Espacio justo para no chocar con los iconos */
+}
+
+.navbar-nav {
+    flex-direction: row;
+    gap: 25px;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    /* MÁS GRANDE */
+    font-weight: 900;
+    /* BIEN GRUESO */
+    color: #DD2736 !important;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #037EA7 !important;
+}
+
+/* 3. HERO BANNER */
+.hero-banner {
+    min-height: 85vh;
+}
+
+/* Altura controlada */
+.hero-banner .btn {
+    font-size: 30px;
+    padding: 12px 40px;
+    border-width: 3px;
+    border-radius: 50px;
+    margin-top: 220%;
+}
+
+/* 4. SECCIÓN NOVEDADES */
+.novedades-section h2 {
+    font-size: 35px;
+    /* Más controlado */
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #DD2736 !important;
+    margin-bottom: 1.5rem;
+    padding-left: 20px;
+}
+
+.novedades-section .lead {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.novedades-section p {
+    font-size: 1rem;
+    padding-left: 20px;
+}
+
+.novedades-section img {
+    border: 3px solid #000;
+    box-shadow: 8px 8px 0px #000;
+    transition: transform 0.3s ease;
+}
+
+.novedades-section img:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px #000;
+}
+
+
+/* 5. NUEVOS INGRESOS & PRODUCTOS DESTACADOS (Estilos Compartidos) */
+.nuevos-ingresos,
+.productos-destacados {
+    background-color: transparent !important;
+    background-image: url("../multimedia/nuevosingresos-desktop.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    padding: 80px 0;
+    /* Padding vertical equilibrado */
+}
+
+/* Corrección Título Productos Destacados (Interletra y tamaño) */
+.nuevos-ingresos .section-title,
+.productos-destacados .section-title {
+    font-size: 50px !important;
+    /* Tamaño grande pero no gigante */
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: 2px !important;
+    /* SEPARACIÓN PEDIDA */
+    text-align: center;
+    margin-bottom: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo Botones "Añadir al carrito" (Rojos Píldora - Wireframe) */
+.btn-custom-teal,
+.product-card-grid .btn {
+    background-color: #037EA7 !important;
+    /* Rojo Taped */
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    /* Opcional, según prefieras */
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 50px;
+    /* Píldora */
+    border: none !important;
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-custom-teal:hover,
+.product-card-grid .btn:hover {
+    background-color: #b91d2a !important;
+    /* Rojo más oscuro al hover */
+    transform: scale(1.02);
+}
+
+
+/* 6. COLECCIÓN COOL THINGS (Ajuste de Proporciones) */
+.cool-things-desktop {
+    padding: 60px 0;
+    /* Menos altura */
+    background-color: #0C0C0C;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* 6. COLECCIÓN COOL THINGS (DISEÑO WIREFRAME FINAL) */
+.cool-things-desktop {
+    background-color: #DD2736 !important;
+    /* FONDO ROJO */
+    padding: 0;
+    height: 750px;
+    /* Altura fija para encuadrar la composición */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ocultamos el título H2 gigante porque no está en el wireframe */
+.cool-things-desktop h2 {
+    display: none !important;
+}
+
+/* --- CINTAS DE TEXTO (TICKERS) --- */
+.ticker-wrap {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    /* Detrás de la ropa */
+    pointer-events: none;
+}
+
+.ticker-top {
+    top: -55px !important;
+}
+
+.ticker-bottom {
+    bottom: 40px;
+}
+
+.cool-things-desktop .ticker-content span {
+    font-family: "Inter", sans-serif;
+    /* Tipografía limpia */
+    font-weight: 700;
+    font-size: 60px;
+    /* Texto grande de fondo */
+    color: #ffffff !important;
+    /* Blanco puro */
+    opacity: 1;
+    text-transform: lowercase;
+    /* 'sneakers' en minúscula como el diseño */
+    margin: 0 20px;
+    -webkit-text-stroke: 0px !important;
+    /* Sin borde, sólido */
+    letter-spacing: -2px;
+}
+
+/* Ajuste específico para la cinta de abajo (COOL CLOTHING) */
+.ticker-bottom .ticker-content span {
+    text-transform: uppercase;
+    /* COOL CLOTHING en mayúscula */
+    font-size: 40px;
+}
+
+/* --- COMPOSICIÓN IMÁGENES --- */
+.cool-things-content-desktop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 14040px;
+    margin: 0 auto;
+}
+
+/* 1. CAMISETA (Centro) */
+.cool-things-content-desktop img[src*="tatuajecamisa"] {
+    position: absolute;
+    left: -15%;
+    bottom: -160px;
+    transform: translate(-50%, -45%);
+    /* Centrado exacto */
+    height: 600px;
+    /* Tamaño protagonista */
+    width: auto;
+    z-index: 10;
+}
+
+/* 2. CAJAS (AMBAS A LA DERECHA) */
+
+/* Caja Roja (Arriba Derecha) */
+.cool-things-content-desktop img[src*="cajaroja"] {
+    position: absolute;
+    right: 5% !important;
+    top: 25%;
+    left: auto !important;
+    bottom: auto !important;
+    width: 500px !important;
+    /* Tamaño grande */
+    transform: rotate(0deg);
+    z-index: 11;
+}
+
+/* Caja Azul (Abajo Derecha - Debajo de la roja) */
+.cool-things-content-desktop img[src*="cajaazul"] {
+    position: absolute;
+    right: 5%;
+    top: -30% !important;
+    /* Ubicada debajo de la roja */
+    left: auto !important;
+    bottom: auto !important;
+    width: 420px !important;
+    transform: rotate(-10deg);
+    /* Ligera rotación como si cayera */
+    z-index: 12;
+}
+
+/* 8. NEWSLETTER DESKTOP (FINAL CORREGIDO) */
+.newsletter-desktop {
+    padding: 100px 0;
+    background-color: #F4F6E6 !important;
+    /* Fondo Crema */
+}
+
+.newsletter-title-desktop {
+    font-family: "Unbounded", sans-serif !important;
+    font-size: 50px !important;
+    color: #DD2736 !important;
+    /* Rojo */
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.newsletter-desktop .lead {
+    font-family: "Inter", sans-serif;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+/* --- CASSETTE (RECTO Y FLOTANDO) --- */
+.newsletter-cassette-img {
+    width: 180px !important;
+    /* Tamaño pequeño controlado */
+    height: auto;
+    display: block;
+    margin-bottom: 35px;
+    /* Margen negativo para que "flote" sobre el input */
+    position: relative;
+    z-index: 1;
+    /* Detrás del input visualmente o justo encima del borde */
+    /* QUITAMOS EL TRANSFORM ROTATE QUE LO HACÍA VER DOBLADO */
+}
+
+/* --- AVATAR PEQUEÑO (Icono dentro del input) --- */
+.newsletter-avatar {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.newsletter-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+/* --- INPUT (GRIS Y BORDE NEGRO) --- */
+.newsletter-input-desktop {
+    height: 70px !important;
+    background-color: #EEEEEE !important;
+    /* Gris suave */
+    border: 3px solid #000 !important;
+    border-radius: 15px !important;
+    padding-left: 65px !important;
+    /* Espacio para el avatar */
+    font-size: 1.2rem;
+    width: 100%;
+    box-shadow: none !important;
+    position: relative;
+    z-index: 5;
+    /* Sobre el cassette */
+}
+
+.newsletter-input-desktop::placeholder {
+    color: #666;
+    font-weight: 500;
+}
+
+/* --- BOTÓN (NEGRO Y GRUESO) --- */
+.newsletter-btn-desktop {
+    background-color: #037EA7 !important;
+    /* NEGRO */
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 15px 60px;
+    font-family: "Unbounded", sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+    /* Sombra sólida sutil */
+}
+
+.newsletter-btn-desktop:hover {
+    transform: scale(1.05);
+    background-color: #DD2736 !important;
+}
+
+.footer-social-icons a:hover {
+    opacity: 0.7;
+}
+
+/* =========================================
+   PÁGINA NOSOTROS (DESKTOP)
+   ========================================= */
+
+/* Fondo Azul Intenso */
+.bg-custom-blue {
+    background-color: #037EA7 !important;
+}
+
+/* Fondo Crema General */
+.bg-light-cream {
+    background-color: #F7F9EB !important;
+}
+
+/* CONTENEDOR (MARCO BEIGE) */
+.nosotros-card-img {
+    background-color: #F7F9EB !important;
+    border-radius: 50px !important;
+    /* Borde redondeado externo */
+    padding: 20px !important;
+    /* ESTO ES EL GROSOR DEL "MARGENCITO" */
+    overflow: hidden;
+    width: 100%;
+    /* Asegura que ocupe la columna */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+    /* Sombra interna sutil */
+}
+
+/* Cajas Negras de los Cassettes */
+.cassette-box {
+    background-color: #000000;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cassette-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Tipografía Textos Largos */
+.nosotros-desktop-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* IMAGEN (SIN ROTAR Y LLENANDO EL ESPACIO) */
+.nosotros-card-img img {
+    transform: none !important;
+    /* Cero rotación */
+    width: 100% !important;
+    /* Llena todo el espacio disponible dentro del padding */
+    height: auto !important;
+    max-width: 100% !important;
+    border-radius: 35px !important;
+    /* Borde redondeado interno (un poco menos que el externo) */
+    display: block;
+}
+
+.nosotros-img-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    /* Tamaño pequeño pero legible */
+    color: #ffffff !important;
+    /* Blanco puro */
+    text-align: right;
+    font-style: italic;
+    /* Mantenemos la itálica */
+    margin-top: 15px;
+    /* Separación justa de la imagen */
+    opacity: 0.9;
+    /* Leve transparencia, no tan gris como el 50% */
+    font-weight: 300;
+    /* Letra fina */
+}
+
+/* =========================================
+   PÁGINA SKATE (DESKTOP)
+   ========================================= */
+
+/* 1. Banner Principal */
+.skate-desktop-banner {
+    height: 400px;
+    /* Altura fija impactante */
+    overflow: hidden;
+    position: relative;
+}
+
+.skate-desktop-banner .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Centrar la acción */
+}
+
+.skate-desktop-title {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    /* A la derecha como en el wireframe */
+    transform: translateY(-50%);
+    font-family: 'Unbounded', sans-serif !important;
+    font-weight: 900;
+    font-size: 8rem;
+    /* GIGANTE */
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+}
+
+/* 2. Barra de Información */
+.skate-info-bar {
+    background-color: #D9D9D9;
+    /* Gris claro según imagen */
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 3. Cards de Producto Desktop (Negras) */
+.skate-card-desktop {
+    background-color: #000000 !important;
+    /* Fondo Negro */
+    border: 4px solid #000000;
+    /* Borde grueso */
+    border-radius: 0 !important;
+    /* Cuadradas */
+    color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.skate-card-desktop:hover {
+    transform: translateY(-5px);
+}
+
+.skate-card-desktop .card-img-wrapper {
+    background-color: #fff;
+    /* Fondo blanco para la imagen del producto */
+    padding: 20px;
+    text-align: center;
+}
+
+.skate-card-desktop .card-body {
+    padding: 1.5rem;
+    text-align: left;
+    /* Texto alineado a la izquierda */
+}
+
+.skate-card-desktop .card-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff !important;
+}
+
+.skate-card-desktop .card-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #cccccc;
+}
+
+/* Botón Azul Píldora */
+.btn-skate-desktop {
+    background-color: #037EA7 !important;
+    /* Azul Petróleo */
+    color: #ffffff !important;
+    width: 100%;
+    border-radius: 50px !important;
+    font-weight: 700;
+    text-transform: none;
+    /* "Añadir al carrito" normal */
+    padding: 10px 0;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-skate-desktop:hover {
+    background-color: #DD2736 !important;
+}
+
+/* Ajuste Tira Roja */
+.bg-custom-red {
+    background-color: #DD2736 !important;
+}
+
+/* =========================================
+   PÁGINA ROPA Y CALZADO (DESKTOP)
+   ========================================= */
+
+/* 1. Banner Ropa */
+.ropa-desktop-banner {
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ropa-desktop-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    /* Grande y centrado */
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+}
+
+/* 2. Títulos de Sección (Negros) */
+.ropa-section-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+/* 3. Cards Ropa Desktop */
+.ropa-card-desktop {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.ropa-card-desktop .card-img-wrapper {
+    border: 4px solid #000000;
+    /* Borde negro grueso */
+    background-color: #ffffff;
+    /* Fondo blanco para la foto */
+    padding: 0;
+    /* Foto al borde o con padding según prefieras */
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    /* Cuadradas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ropa-card-desktop .card-img-wrapper img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.ropa-card-desktop .card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: #ffffff;
+    /* Títulos blancos sobre fondo negro de la card body? */
+}
+
+/* Corrección: En el wireframe, el texto está debajo de la foto, sobre el fondo crema. */
+.ropa-card-desktop .card-body {
+    background-color: #000000;
+    /* Caja negra debajo de la foto */
+    padding: 15px !important;
+    border: 4px solid #000000;
+    border-top: none;
+    /* Unir con la parte de arriba */
+}
+
+.ropa-card-desktop .card-text {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+
+/* Fondo rojo suave para cards de calzado (Opcional, como en wireframe) */
+.bg-custom-red-light {
+    background-color: #DD2736;
+    /* Si quieres el fondo rojo dentro del marco negro */
+}
+
+/* Estilos Sección INFO (Ropa Desktop) */
+.ropa-info-title {
+    color: #DD2736 !important;
+    /* Rojo */
+    font-family: 'Unbounded', sans-serif !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.ropa-info-list li {
+    color: #037EA7 !important;
+    /* Azul Taped */
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.ropa-info-list strong {
+    font-weight: 800;
+    /* Negrita fuerte para el título del item */
+}
+
+/* =========================================
+   PÁGINA CONTACTO (DESKTOP)
+   ========================================= */
+
+/* Fondo Rojo Texturizado */
+.contact-desktop-bg {
+    background-color: #DD2736 !important;
+    /* Rojo base */
+    background-image: url("../multimedia/nuevosingresos-desktop.png");
+    /* Textura rompecabezas */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* Título Principal */
+.contact-desktop-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+/* Caja Mapa */
+.map-desktop-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 4px solid #ffffff;
+}
+
+/* Caja Dirección (Segmentada) */
+.address-box {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Fondo negro semitransparente */
+    border-radius: 15px;
+    border-left: 4px solid #ffffff;
+    /* Detalle estético lateral */
+}
+
+/* Caja Formulario (Blanco estilo tarjeta) */
+.contact-form-desktop-wrapper {
+    border-radius: 20px !important;
+    border: 2px solid #8A8AF5;
+    /* Borde violeta suave del wireframe */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Inputs dentro del form desktop */
+.contact-form-desktop-wrapper input,
+.contact-form-desktop-wrapper textarea {
+    background-color: #F8F9FA !important;
+    border: 1px solid #ced4da !important;
+    padding: 12px;
+    font-size: 0.9rem;
+}

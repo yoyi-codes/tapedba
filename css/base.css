@@ -1,0 +1,846 @@
+/* 
+   BASE.CSS - MOBILE FIRST (Estilos Generales)
+  */
+
+/* 1. FUENTES & RESET */
+@font-face {
+    font-family: 'Inter';
+    src: url('../tipografias/Inter_24pt-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../tipografias/Inter_24pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../tipografias/Inter_24pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../tipografias/Unbounded-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+}
+
+body {
+    background-color: #0C0C0C;
+    font-family: 'Inter', sans-serif;
+    /* Todo texto base en Inter */
+    overflow-x: hidden;
+    color: #ffffff;
+}
+
+ul.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CLASES DE COLOR */
+.bg-custom-dark {
+    background-color: #0C0C0C;
+}
+
+.bg-custom-red {
+    background-color: #DD2736;
+}
+
+.text-custom-red {
+    color: #DD2736;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
+/* 
+   2. NAVBAR & MENÚ HAMBURGUESA
+  */
+.navbar-logo {
+    height: 50px;
+    width: auto;
+}
+
+/* CORRECCIÓN CENTRADO MENÚ HAMBURGUESA (MOBILE) */
+
+/* 1. El contenedor padre necesita ser relativo */
+.navbar .container-fluid {
+    position: relative;
+    justify-content: space-between;
+    /* Mantiene logo izq e iconos der */
+}
+
+/* 2. El botón se centra de forma absoluta */
+.navbar-toggler {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centrado matemático exacto */
+    margin: 0;
+    z-index: 1050;
+    /* Asegura que quede clickeable */
+    border: none;
+    /* Quitamos bordes si quedaron */
+}
+
+/* Ajuste opcional: si en mobile muy pequeño se encima, reducir padding */
+.navbar-logo {
+    z-index: 1060;
+    position: relative;
+}
+
+/* Logo Header Controlado */
+
+/* Ajuste Botón Hamburguesa (Gris a Blanco y Hover Rojo) */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Icono BLANCO por defecto */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: background-image 0.3s ease;
+}
+
+/* Icono ROJO al pasar el mouse (Hover) */
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23DD2736' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Menú Desplegable */
+.navbar-collapse.collapse.show {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #0C0C0C;
+}
+
+.navbar-collapse .nav-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 1.5rem 0;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Hover ROJO en los links del menú desplegado */
+.navbar-collapse .nav-link:hover {
+    color: #DD2736 !important;
+}
+
+
+/* 
+   3. HERO BANNER (MOBILE COMPRIMIDO)
+  */
+.hero-banner {
+    /* Definimos altura fija para que no se estire infinito */
+    height: 50vh;
+    min-height: 400px;
+    /* Mínimo de seguridad */
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* Corta la imagen sobrante */
+}
+
+/* La imagen ocupa el 100% pero se recorta (cover) */
+.hero-banner figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Texto e Interfaz del Banner */
+.hero-title {
+    font-family: 'Inter', sans-serif !important;
+    /* Tipografía Inter */
+    font-weight: 900;
+    font-size: 2rem;
+    /* Un poco más chico para mobile */
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.7);
+    /* Sombra para leer mejor */
+}
+
+.btn-custom-red {
+    background-color: #DD2736;
+    border-color: #DD2736;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    padding: 0.5rem 1.5rem;
+    /* Botón más compacto */
+    font-size: 0.9rem;
+}
+
+
+/* 
+   4. CARRUSELES (PUNTITOS ROJOS)
+  */
+/* Aplica a Nuevos Ingresos y Productos Destacados */
+.carousel-indicators [data-bs-target] {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    /* Círculos */
+    border: none;
+    margin: 0 5px;
+    background-color: #ffffff;
+    /* Inactivos blancos/grises */
+    opacity: 0.5;
+}
+
+.carousel-indicators .active {
+    background-color: #DD2736 !important;
+    /* Activo ROJO */
+    opacity: 1;
+}
+
+
+/* 
+   5. SECCIONES GENERALES (Marcas, Títulos)
+  */
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 650;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+/* Texto Nuestras Marcas (Fondo Crema, Letra Negra) */
+.marcas-texto-fondo {
+    background-color: #FDF9DD;
+    color: #000000 !important;
+    /* Texto negro forzado */
+    padding: 20px;
+    border-radius: 4px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* PÁGINA "NOSOTROS" */
+
+
+.bg-custom-darkblue {
+    background-color: #037EA7;
+}
+
+.nosotros-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400 !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.bg-custom-gray {
+    background-color: #5C5C5C;
+    /*  color gris de Figma */
+}
+
+
+/* 
+   6. COOL THINGS (TICKER MOBILE)
+  */
+.collection-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.cool-things-content {
+    background-image: url('../multimedia/sneaker-coolthing-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.ticker-wrap {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.ticker-content {
+    display: inline-block;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+}
+
+.ticker-content span {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    padding: 0 15px;
+    color: #ffffff;
+}
+
+.ticker-top {
+    top: 0;
+    z-index: 10;
+}
+
+.ticker-top .ticker-content span {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.ticker-bottom {
+    bottom: 0;
+    z-index: 2;
+}
+
+.ticker-bottom .ticker-content span {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.cool-tshirt {
+    position: absolute;
+    z-index: 3;
+    width: 70%;
+    left: -5%;
+    top: 28px;
+}
+
+.cool-box-red {
+    position: absolute;
+    z-index: 1;
+    width: 80%;
+    right: -18%;
+    top: -50px;
+}
+
+.cool-box-blue {
+    position: absolute;
+    z-index: 4;
+    width: 60%;
+    right: -7%;
+    bottom: -30px;
+}
+
+
+/* 
+   7. CARDS DE PRODUCTOS (General & Related)
+  */
+.product-card,
+.product-card-grid,
+.product-card-ropa,
+.related-card {
+    background-color: #222222;
+    /* Fondo oscuro base */
+    color: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 0.75rem;
+}
+
+/* Títulos y Textos de Cards (Blanco y Bold) */
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700 !important;
+    /* Bold */
+    font-size: 0.9rem;
+    color: #ffffff !important;
+    /* Blanco */
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.card-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900 !important;
+    /* Extra Bold */
+    font-size: 1rem;
+    color: #ffffff !important;
+    /* Blanco */
+    margin-bottom: 0;
+}
+
+/* Botón Corazón */
+.btn-heart {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.btn-heart:hover {
+    color: #dc3545 !important;
+    transform: scale(1.3);
+}
+
+/* Botón Azul añadir carrito */
+.btn-custom-blue {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #037EA7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-custom-blue:hover {
+    background-color: #DD2736;
+    color: #ffffff;
+    border-color: #DD2736;
+}
+
+
+/* 
+   8. NEWSLETTER
+  */
+.newsletter-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+}
+
+.newsletter-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-input {
+    background-color: #D9D9D9;
+    border: 2px solid #000;
+    border-radius: 12px;
+    text-align: center;
+    color: #000;
+}
+
+.btn-newsletter-submit {
+    background-color: #037EA7;
+    border: 2px solid #000;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+
+/* 
+   9. FOOTER (CORRECCIÓN LOGO)
+  */
+.bg-custom-blue {
+    background-color: #037EA7;
+}
+
+.footer-logo {
+    /* Hacemos el logo más pequeño y responsivo */
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.footer-social-icons a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+
+/* 
+   10. ESTILOS PÁGINAS INTERNAS (Skate, Contacto, Ropa)
+  */
+
+/* Ropa y Calzado: Títulos en Inter */
+.page-title {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.page-subtitle {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Ajuste banner interno Mobile */
+.page-banner {
+    min-height: 250px;
+    overflow: hidden;
+}
+
+/* 
+   CARDS RELACIONADAS (ROPA Y CALZADO) - TABLET
+  */
+/* 
+   OCULTAR PUNTITOS (INDICADORES) EN ROPA Y CALZADO
+  */
+
+/* Ocultar en sliders de Ropa (Móvil y Tablet) */
+#carouselRemeras .carousel-indicators,
+#carouselRemerasTablet .carousel-indicators,
+#carouselPantalones .carousel-indicators,
+#carouselPantalonesTablet .carousel-indicators,
+#carouselCalzado .carousel-indicators,
+#carouselCalzadoTablet .carousel-indicators {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.product-card-related {
+    background-color: #555555;
+    /* Fondo Gris */
+    color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+
+    /* Ajustes Específicos Tablet */
+    border: 3px solid #037EA7 !important;
+    /* Borde Azul */
+    height: 100%;
+    /* Para que todas tengan la misma altura en la fila */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover */
+.product-card-related:hover {
+    transform: translateY(-5px);
+    /* Se levanta un poco */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.product-card-related .card-body {
+    padding: 0.75rem;
+}
+
+/* Títulos */
+.product-card-related .card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: #ffffff !important;
+}
+
+/* Precios / Texto */
+.product-card-related .card-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #ffffff !important;
+    margin-bottom: 0;
+}
+
+/* --- PÁGINA SKATE (Corrección Mobile) --- */
+
+.skate-banner {
+    position: relative;
+    /* Vital: define el límite para los elementos de adentro */
+    min-height: 250px;
+    /* Altura mínima para que se vea bien la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* La imagen debe ocupar todo el fondo de forma absoluta */
+.skate-banner figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 0;
+    /* Se queda atrás */
+}
+
+.skate-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Recorta la imagen para llenar el espacio sin deformar */
+    opacity: 0.6;
+    /* Un poco oscuro para que el texto blanco resalte */
+}
+
+/* El contenedor del texto FLOTA sobre la imagen */
+.skate-banner-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centrado perfecto vertical y horizontal */
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    /* Se pone por delante de la imagen */
+}
+
+.skate-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    /* Extra Bold se ve mejor en banners */
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Blanco obligatorio sobre fondo oscuro */
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+    /* Sombra para leerse bien */
+}
+
+/* Según tu indicación anterior, el subtítulo se oculta en Mobile */
+/* Si quisieras verlo, cambia 'display: none' a 'display: block' y color blanco */
+.skate-subtitle {
+    display: none;
+}
+
+/* Contacto */
+.bg-custom-dark-gray {
+    background-color: #1B1A1A;
+}
+
+.bg-custom-badge-blue {
+    background-color: #037EA7 !important;
+    color: #FFFFFF;
+}
+
+/* --- BANNER CONTACTO (FIX CENTRADO) --- */
+.contact-banner {
+    position: relative;
+    background-color: #000;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.contact-banner .figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 0;
+}
+
+
+.contact-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+
+.contact-banner-caption {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* 
+   ESTILOS GENÉRICOS CARDS (SKATE Y RELACIONADOS)
+   (Aplica a Mobile y Tablet)
+  */
+
+/* 1. Estructura Base de la Card (Gris y con Transición) */
+.product-card-skate {
+    background-color: #037EA7 !important;
+    /* Fondo Gris Solicitado */
+    color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    /* Preparar animación suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.related-card {
+    background-color: #222222;
+}
+
+/* 2. Efecto Hover "POP" (Zoom ligero) */
+.product-card-skate:hover,
+.related-card:hover {
+    transform: scale(1.03);
+    /* Crece un 3% */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidad */
+    z-index: 2;
+    position: relative;
+}
+
+/* Padding interno */
+.product-card-skate .card-body,
+.related-card .card-body {
+    padding: 0.75rem;
+}
+
+/* 3. Títulos (Blanco y Bold) */
+.product-card-skate .card-title,
+.related-card .card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    /* Bold */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: #ffffff !important;
+}
+
+/* 4. Texto/Precio (Blanco y Extra Bold) */
+.product-card-skate .card-text,
+.related-card .card-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    /* Extra Bold */
+    font-size: 1rem;
+    color: #ffffff !important;
+    margin-bottom: 0;
+}
+
+/* 5. Botón Azul (Añadir al carrito) */
+.btn-custom-blue {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    border: 2px solid #ffffff;
+    color: #037EA7;
+    /* Texto azul */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-blue:hover {
+    background-color: #DD2736;
+    /* Fondo Rojo */
+    color: #ffffff;
+    /* Texto Blanco */
+    border-color: #DD2736;
+}
+
+/* 6. Corazón (Visible sobre fondo gris) */
+.btn-heart {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    z-index: 10;
+    position: relative;
+    transition: transform 0.2s;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-heart:hover {
+    color: #DD2736 !important;
+    transform: scale(1.2);
+}
+
+.contact-banner {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.contact-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    background-color: #000;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.map-responsive {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+}
