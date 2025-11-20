@@ -7,182 +7,227 @@
     <title>TAPED BA - Contacto</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="../css/estilos.css" rel="stylesheet">
-
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/tablet.css" rel="stylesheet" media="(min-width: 768px)">
+    <link href="../css/desktop.css" rel="stylesheet" media="(min-width: 992px)">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 </head>
 
-<body class="bg-custom-dark-gray">
-
+<body>
     <header>
-        <nav class="navbar navbar-dark bg-custom-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom-dark">
             <div class="container-fluid">
-
                 <a class="navbar-brand" href="../index.html">
-                    <picture>
-                        <source srcset="../multimedia/logo-tablet.png" media="(min-width: 768px)">
-                        <img src="../multimedia/logo-mobile.png" alt="Logo de TAPED BA" class="navbar-logo">
-                    </picture>
+                    <h1 class="m-0">
+                        <picture>
+                            <source srcset="../multimedia/logo-desktop.png" media="(min-width: 992px)">
+                            <source srcset="../multimedia/logo-tablet.png" media="(min-width: 768px)">
+                            <img src="../multimedia/logo-mobile.png" alt="Logo de TAPED BA" class="navbar-logo">
+                        </picture>
+                        <span class="visually-hidden">TAPED BA</span>
+                    </h1>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuCollapse"
                     aria-controls="menuCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-flex align-items-center">
-                    <a href="#" class="nav-link text-white me-3" aria-label="Buscar"><i
-                            class="bi bi-search fs-5"></i></a>
-                    <a href="#" class="nav-link text-white" aria-label="Carrito de compras">
-                        <i class="bi bi-cart fs-5 position-relative">
 
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-custom-badge-blue"
-                                style="font-size: 0.6em;">5</span>
-                        </i>
-                    </a>
+                <div class="d-flex d-lg-none align-items-center position-absolute end-0 me-3">
+                    <a href="#" class="nav-link text-white me-3"><i class="bi bi-search fs-5"></i></a>
+                    <a href="#" class="nav-link text-white"><i class="bi bi-cart fs-5"></i></a>
                 </div>
+
+                <div class="d-none d-lg-flex align-items-center icons-desktop">
+                    <a href="#" class="nav-link text-dark me-3"><i class="bi bi-search"></i></a>
+                    <a href="#" class="nav-link text-dark"><i class="bi bi-cart"></i></a>
+                </div>
+
                 <div class="collapse navbar-collapse" id="menuCollapse">
                     <ul class="navbar-nav text-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="nosotros.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="skate.html">Skate</a>
-                        </li>
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="ropaycalzado.html">Ropa y Calzado</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="skate.html">Skate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ropaycalzado.html">Ropa y Calzado</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div id="topBarCarousel" class="carousel slide carousel-fade bg-custom-red" data-bs-ride="carousel">
+            <ul class="carousel-inner text-center py-2 list-unstyled m-0 p-0">
+                <li class="carousel-item active py-2" data-bs-interval="2500">
+                    <p class="mb-0 text-white small fw-bold">Envío gratis a partir de $149.999</p>
+                </li>
+                <li class="carousel-item py-2" data-bs-interval="2500">
+                    <p class="mb-0 text-white small fw-bold">3 y 6 Cuotas Sin Interés</p>
+                </li>
+            </ul>
+        </div>
     </header>
 
     <main>
 
-
-        <section class="page-banner position-relative text-white">
-            <img src="../multimedia/contacto-banner.png" class="img-fluid w-100" alt="Banner de Contacto Taped">
-            <div class="page-banner-caption text-center">
-                <h1 class="page-title">CONTACTO</h1>
-            </div>
-        </section>
-
-
-        <section class="contact-form-section py-5 text-white">
-            <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-12 col-md-10 col-lg-8">
-                        <div class="text-center mb-4">
-                            <h2 class="contact-title">¡HABLEMOS!</h2>
-                            <p class="contact-subtitle">Déjanos tu mensaje y te respondemos lo antes posible</p>
-                        </div>
-
-
-                        <form class="row g-3 contact-form">
-                            <div class="col-12">
-                                <label for="inputNombre" class="form-label contact-label">Nombre</label>
-                                <input type="text" class="form-control contact-input" id="inputNombre"
-                                    placeholder="Ingresá tu nombre">
-                            </div>
-                            <div class="col-12">
-                                <label for="inputApellido" class="form-label contact-label">Apellido</label>
-                                <input type="text" class="form-control contact-input" id="inputApellido"
-                                    placeholder="Ingresá tu apellido">
-                            </div>
-                            <div class="col-12">
-                                <label for="inputEmail" class="form-label contact-label">Email</label>
-                                <input type="email" class="form-control contact-input" id="inputEmail"
-                                    placeholder="Ingresá tu email">
-                            </div>
-                            <div class="col-12">
-                                <label for="inputMensaje" class="form-label contact-label">Mensaje</label>
-                                <textarea class="form-control contact-input" id="inputMensaje" rows="5"
-                                    placeholder="Hola, quiero formar parte de su equipo..."></textarea>
-                            </div>
-                            <div class="col-12 text-center mt-4">
-                                <button type="submit" class="btn btn-custom-red w-100">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
+        <div class="d-lg-none bg-custom-dark-gray">
+            <section class="contact-banner">
+                <figure class="figure w-100 m-0 p-0 border-0">
+                    <picture>
+                        <source srcset="../multimedia/contacto-banner.png" media="(min-width: 768px)">
+                        <img src="../multimedia/contacto-banner.png" class="img-fluid w-100" alt="Banner Contacto">
+                    </picture>
+                </figure>
+                <div class="contact-banner-caption">
+                    <h1 class="contact-title">CONTACTO</h1>
                 </div>
-            </div>
-        </section>
-
-        < <section class="contact-store-section py-5 bg-black text-white">
-            <div class="container">
-                <h2 class="section-title text-center mb-4">VISITÁ NUESTRA TIENDA</h2>
-
-
-                <div class="row g-4 align-items-center">
-
-                    <!-- Columna 1: Mapa -->
-                    <!-- "col-md-6" hace que ocupe la mitad en tablet -->
-                    <div class="col-12 col-md-6">
-                        <div class="map-responsive">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3142.340082855502!2d-57.5303692236894!3d-38.038481344449005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d962b724497f%3A0x80852d7e4368f307!2sAvenida%20del%20Mar%201276%2C%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1731459000000!5m2!1ses-419!2sar"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Columna 2: Info de la Tienda -->
-                    <!-- "col-md-6" hace que ocupe la otra mitad en tablet -->
-                    <div class="col-12 col-md-6">
-                        <div class="store-info text-start px-3">
-                            <p class="store-info-text">
-                                Avenida del Mar 1276, Barrio Los Acantilados, <br>
-                                <span class="fw-bold">Mar del Plata, Argentina.</span>
-                            </p>
-                            <p class="store-info-text">
-                                <a href="tel:+5492235841927" class="store-link">Tel: +54 9 223 584 1927</a> <br>
-
-                                <a href="mailto:hola@taped.com.ar" class="store link">hola@taped.com.ar</a>
-                            </p>
-                            <p class="store-info-text fw-bold">
-                                Lunes a Sábado - 10:00 a 19:00 hs.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="text-center small fw-light mt-5 mb-0">
-                    Seguinos y formá parte de la comunidad <span class="fw-bold">TAPED</span>
-                </p>
-            </div>
             </section>
+
+            <section class="contact-form-section py-5 text-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <div class="text-center mb-4">
+                                <h2 class="contact-title">¿QUÉ ONDA?</h2>
+                                <p class="contact-subtitle">Dejanos tu mensaje y te respondemos lo antes posible</p>
+                            </div>
+                            <form class="row g-3 contact-form">
+                                <div class="col-12">
+                                    <label class="form-label contact-label">Nombre</label>
+                                    <input type="text" class="form-control contact-input"
+                                        placeholder="Ingresá tu nombre">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label contact-label">Apellido</label>
+                                    <input type="text" class="form-control contact-input"
+                                        placeholder="Ingresá tu apellido">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label contact-label">Email</label>
+                                    <input type="email" class="form-control contact-input"
+                                        placeholder="Ingresá tu email">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label contact-label">Mensaje</label>
+                                    <textarea class="form-control contact-input" rows="5"
+                                        placeholder="Hola..."></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-custom-red w-100">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-store-section py-5 bg-black text-white">
+                <div class="container">
+                    <h2 class="section-title text-center mb-4">VENÍ PRONTO</h2>
+                    <div class="row g-4 align-items-center">
+                        <div class="col-12 col-md-6">
+                            <div class="map-responsive">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.992488423866!2d-57.557545!3d-38.005505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584de0306b3626f%3A0x6543008427d071f9!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1646165000000!5m2!1ses!2sar"
+                                    width="100%" height="300" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 text-start">
+                            <p class="store-info-text">Avenida del Mar 1276, Barrio Los Acantilados, <br><span
+                                    class="fw-bold">Mar del Plata, Argentina.</span></p>
+                            <p class="store-info-text fw-bold">Lunes a Sábado - 10:00 a 19:00 hs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="d-none d-lg-block contact-desktop-bg">
+
+            <section class="py-5 text-center">
+                <h1 class="contact-desktop-title">CONTACTO</h1>
+            </section>
+
+            <div class="container pb-5">
+                <div class="row g-5">
+
+                    <div class="col-lg-6">
+                        <h2 class="section-title text-white mb-4 text-start">NUESTRA TIENDA</h2>
+
+                        <div class="map-desktop-wrapper mb-4">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.992488423866!2d-57.557545!3d-38.005505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584de0306b3626f%3A0x6543008427d071f9!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1646165000000!5m2!1ses!2sar"
+                                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+
+                        <div class="address-box p-3">
+                            <p class="text-white mb-1">Avenida del Mar 1276, Barrio Los Acantilados</p>
+                            <p class="text-white fw-bold mb-3">Mar del Plata, Argentina.</p>
+
+                            <p class="text-white mb-1">Tel: +54 9 223 584 1927</p>
+                            <p class="text-white mb-3">hola@taped.com.ar</p>
+
+                            <p class="text-white fw-bold">Lunes a Sábado - 10:00 a 19:00 hs.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h2 class="section-title text-white mb-4 text-start">¡HABLEMOS!</h2>
+
+                        <div class="contact-form-desktop-wrapper p-4 bg-white rounded-3 shadow">
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label text-dark fw-bold small">Nombre</label>
+                                    <input type="text" class="form-control bg-light border-0"
+                                        placeholder="Ingrese su nombre">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-dark fw-bold small">Apellido</label>
+                                    <input type="text" class="form-control bg-light border-0"
+                                        placeholder="Ingrese su apellido">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-dark fw-bold small">Email</label>
+                                    <input type="email" class="form-control bg-light border-0"
+                                        placeholder="Ingrese su email">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-dark fw-bold small">Mensaje</label>
+                                    <textarea class="form-control bg-light border-0" rows="4"
+                                        placeholder="Hola, quiero formar parte de su equipo..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit"
+                                        class="btn btn-custom-red w-100 py-2 fw-bold text-uppercase">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-5 text-white">
+                    <p class="fs-5">Seguinos y formá parte de la comunidad <strong>TAPED</strong></p>
+                </div>
+
+            </div>
+        </div>
 
     </main>
 
-    <!-- "flex-column" (móvil) y "flex-md-row" (tablet) -->
     <footer class="footer-section bg-custom-blue py-4">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-
-
-            <div class="mb-3 mb-md-0">
-                <img src="../multimedia/iso-footer.png" alt="Isotipo Taped" class="footer-logo">
+            <div class="mb-3 mb-md-0"><img src="../multimedia/iso-footer.png" alt="Isotipo Taped" class="footer-logo">
             </div>
-
             <div class="text-center mb-3 mb-md-0">
                 <p class="footer-text">© 2025 TAPED. Todos los derechos reservados.</p>
-                <p class="footer-text">
-                    Hecho por Johana Dávila, Diseño Multimedial DMN2BV
-                </p>
+                <p class="footer-text">Hecho por Johana Dávila, Diseño Multimedial DMN2BV</p>
             </div>
-
             <div class="footer-social-icons">
-                <a href="https://www.instagram.com" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.Facebook.com" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.x.com" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a> </div>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+            </div>
         </div>
     </footer>
 

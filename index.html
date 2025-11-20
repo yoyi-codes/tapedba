@@ -6,22 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TAPED Buenos Aires</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/estilos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="../css/base.css" rel="stylesheet">
+
+    <link href="../css/tablet.css" rel="stylesheet" media="(min-width: 768px)">
+
+    <link href="../css/desktop.css" rel="stylesheet" media="(min-width: 992px)">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
+
     <header>
-        <nav class="navbar navbar-dark bg-custom-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom-dark">
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="index.html">
-                    <picture>
-                        <source srcset="multimedia/logo-tablet.png" media="(min-width: 768px)">
-                        <img src="multimedia/logo-mobile.png" alt="Logo de TAPED BA" class="navbar-logo">
-                    </picture>
+                    <h1 class="m-0">
+                        <picture>
+                            <!-- Desktop (LG > 992px): -->
+                            <source srcset="multimedia/logo-desktop.png" media="(min-width: 992px)">
+                            <!-- Tablet (MD > 768px): Logo Tablet -->
+                            <source srcset="multimedia/logo-tablet.png" media="(min-width: 768px)">
+                            <!-- Mobile: Logo Mobile -->
+                            <img src="multimedia/logo-mobile.png" alt="Logo de TAPED BA" class="navbar-logo">
+                        </picture>
+                        <span class="visually-hidden">TAPED BA</span>
+                    </h1>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuCollapse"
@@ -29,7 +42,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center order-lg-last ms-lg-3 icons-desktop">
+
                     <a href="#" class="nav-link text-white me-3" aria-label="Buscar">
                         <i class="bi bi-search fs-5"></i>
                     </a>
@@ -46,128 +60,212 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="menuCollapse">
-                    <ul class="navbar-nav text-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="secciones/nosotros.html">Nosotros</a>
+                    <ul class="navbar-nav mx-auto text-center">
+                        <li class="nav-item"><a class="nav-link" href="secciones/nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="secciones/skate.html">Skate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="secciones/ropaycalzado.html">Ropa y Calzado</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="secciones/skate.html">Skate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="secciones/ropaycalzado.html">Ropa y Calzado</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="secciones/contacto.html">Contacto</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="secciones/contacto.html">Contacto</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div id="topBarCarousel" class="carousel slide carousel-fade bg-custom-red" data-bs-ride="carousel">
-            <div class="carousel-inner text-center py-2">
-                <div class="carousel-item active py-2" data-bs-interval="1000">
-                    <p class="mb-0 text-white small fw-bold">
-                        Envío gratis a partir de $149.999
-                    </p>
-                </div>
-                <div class="carousel-item py-2" data-bs-interval="1000">
-                    <p class="mb-0 text-white small fw-bold">
-                        3 y 6 Cuotas Sin Interés
-                    </p>
-                </div>
-                <div class="carousel-item py-2" data-bs-interval="1000">
-                    <p class="mb-0 text-white small fw-bold">
-                        Envíos a todo el país
-                    </p>
-                </div>
-                <div class="carousel-item py-2" data-bs-interval="1000">
-                    <p class="mb-0 text-white small fw-bold">
-                        Nuevos ingresos de Skate
-                    </p>
-                </div>
-            </div>
+        <!-- TopBar: Clase 'topbar-desktop' para cambiar color en CSS -->
+        <div id="topBarCarousel" class="carousel slide carousel-fade bg-custom-red topbar-desktop"
+            data-bs-ride="carousel">
+            <ul class="carousel-inner text-center py-2 list-unstyled m-0 p-0">
+                <li class="carousel-item active py-2" data-bs-interval="2500">
+                    <p class="mb-0 text-white small fw-bold">Envío gratis a partir de $149.999</p>
+                </li>
+                <li class="carousel-item py-2" data-bs-interval="2500">
+                    <p class="mb-0 text-white small fw-bold">3 y 6 Cuotas Sin Interés</p>
+                </li>
+            </ul>
         </div>
     </header>
 
     <main>
-        <section class="hero-banner">
-            <div class="container d-flex flex-column justify-content-center align-items-center text-center">
-                <h1 class="hero-title">
+        <!-- ==========================
+             HERO BANNER (Actualizado Desktop)
+             ========================== -->
+        <section class="hero-banner position-relative overflow-hidden" style="min-height: 85vh;">
+
+            <!-- IMAGEN DE FONDO -->
+            <figure class="figure m-0 p-0 w-100 h-100 position-absolute top-0 start-0" style="z-index: 0;">
+                <picture>
+                    <!-- DESKTOP -->
+                    <source srcset="multimedia/nosotros-banner-desktop.png" media="(min-width: 992px)">
+
+                    <!-- TABLET -->
+                    <source srcset="multimedia/banner-tablet.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+
+                    <!-- MOBILE -->
+                    <img src="multimedia/banner-mobile.jpg" alt="Banner Principal TAPED" class="img-fluid w-100"
+                        style="height: 100%; object-fit: cover;">
+                </picture>
+            </figure>
+
+            <!-- CONTENIDO -->
+            <div class="container position-relative d-flex flex-column justify-content-center align-items-center text-center h-100"
+                style="z-index: 1;">
+
+                <h1 class="hero-title text-white d-lg-none">
                     WHERE WHEELS SPIN<br>AND TAPES REWIND
                 </h1>
-                <a href="secciones/ropaycalzado.html" class="btn btn-custom-red mt-3">
-                    Ir a la Tienda
-                </a>
+
+                <div class="mt-3">
+                    <a href="secciones/ropaycalzado.html" class="btn btn-custom-red me-2 d-lg-none">Ir a la Tienda</a>
+                    <a href="#novedades" class="btn btn-custom-red me-2 d-none d-lg-inline-block">Ver Más</a>
+                </div>
+
             </div>
         </section>
+        <!--  SECCIÓN: NOVEDADES (NUEVA - SOLO DESKTOP) -->
+        <section id="novedades" class="novedades-section py-5 d-none d-lg-block bg-transparent text-dark"
+            style="background-color: #F7F9EB !important;">
+            <div class="row align-items-center">
 
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="display-5 fw-bold text-custom-red mb-4"> NOVEDADES</h2>
+
+                    <p class="lead mb-4">
+                        El sábado pasado celebramos el opening de nuestra primera tienda física:
+                        un nuevo punto de encuentro para la comunidad skate y creativa.
+                    </p>
+                    <p>
+                        La jornada estuvo acompañada por DJs locales, excelente música y la mejor energía
+                        de quienes nos han apoyado desde el día uno. También compartimos el espacio con
+                        nuestros amigos de <strong>Café La Plata</strong>, quienes estuvieron sirviendo café durante
+                        todo el evento.
+                    </p>
+
+                    <div class="mt-4">
+                        <p class="fst-italic mb-0">Este es solo el comienzo de una nueva etapa.</p> <br>
+                        <p class="fw-bold">Atte: Equipo de TAPED</p>
+                    </div>
+                </div>
+
+                <!-- Columna Imagen (Derecha) -->
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <!-- Foto del local nuevo -->
+                        <img src="multimedia/nuevolocal-desktop.png" alt="Nuevo Local TAPED"
+                            class="img-fluid rounded shadow-lg w-100">
+                    </div>
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <!-- ==========================
+             NUEVOS INGRESOS
+             ========================== -->
         <section class="nuevos-ingresos py-5 bg-black text-white">
             <div class="container">
-                <h2 class="section-title text-center mb-4">
+                <h2 class="section-title text-center mb-4 
+           fs-3 fs-lg-1 fw-bold">
                     NUEVOS INGRESOS
                 </h2>
 
+                <!-- VISTA MOBILE (< 768px) -->
                 <div id="carouselNuevosIngresos" class="carousel slide d-md-none" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button typeD="button" data-bs-target="#carouselNuevosIngresos" data-bs-slide-to="0"
+                        <button type="button" data-bs-target="#carouselNuevosIngresos" data-bs-slide-to="0"
                             class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselNuevosIngresos" data-bs-slide-to="1"
                             aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselNuevosIngresos" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
                     </div>
+
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="3000">
-                            <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                alt="Zapatillas Nike Skate Like a Girl">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <figure class="figure w-100 m-0">
+                                <img src="multimedia/nuevosingresos-misterybox-mobile.png"
+                                    class="figure-img img-fluid d-block w-100 rounded" alt="Caja Sorpresa Taped">
+                            </figure>
                         </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                alt="Nuevo Ingreso 2">
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <figure class="figure w-100 m-0">
+                                <img src="multimedia/nuevosingresos-newbalance-mobile.png"
+                                    class="figure-img img-fluid d-block w-100 rounded" alt="Zapatillas New Balance">
+                            </figure>
                         </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                alt="Nuevo Ingreso 3">
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <figure class="figure w-100 m-0">
+                                <img src="multimedia/nuevosingresos-taped-mobile.png"
+                                    class="figure-img img-fluid d-block w-100 rounded" alt="Zapatillas Nike">
+                            </figure>
                         </div>
                     </div>
                 </div>
 
-                <div id="carouselNuevosIngresosTablet" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+                <!-- VISTA TABLET (>= 768px Y < 992px) -->
+                <div id="carouselNuevosIngresosTablet" class="carousel slide d-none d-md-block d-lg-none"
+                    data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="3000">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                        alt="Zapatillas Nike Skate Like a Girl">
-                                </div>
-                                <div class="col-4">
-                                    <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                        alt="Nuevo Ingreso 2">
-                                </div>
-                                <div class="col-4">
-                                    <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                        alt="Nuevo Ingreso 3">
-                                </div>
-                            </div>
+                            <ul class="row list-unstyled m-0 p-0">
+                                <li class="col-4">
+                                    <figure class="figure w-100 m-0">
+                                        <img src="multimedia/nuevosingresos-misterybox-tablet.png"
+                                            class="figure-img img-fluid d-block w-100 rounded" alt="Caja Sorpresa">
+                                        <figcaption class="figure-caption text-center text-white mt-2">Caja Sorpresa
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li class="col-4">
+                                    <figure class="figure w-100 m-0">
+                                        <img src="multimedia/nuevosingresos-newbalance-tablet.png"
+                                            class="figure-img img-fluid d-block w-100 rounded" alt="New Balance">
+                                        <figcaption class="figure-caption text-center text-white mt-2">Colaboración New
+                                            Balance</figcaption>
+                                    </figure>
+                                </li>
+                                <li class="col-4">
+                                    <figure class="figure w-100 m-0">
+                                        <img src="multimedia/nuevosingresos-taped-tablet.png"
+                                            class="figure-img img-fluid d-block w-100 rounded" alt="Nike SB">
+                                        <figcaption class="figure-caption text-center text-white mt-2">Colaboración con
+                                            Nike</figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
                         </div>
+                        <!-- Slide 2 Repetido -->
                         <div class="carousel-item" data-bs-interval="3000">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                        alt="Zapatillas Nike Skate Like a Girl">
-                                </div>
-                                <div class="col-4">
-                                    <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                        alt="Nuevo Ingreso 2">
-                                </div>
-                                <div class="col-4">
-                                    <img src="multimedia/nuevosingresos-nike.png" class="d-block w-100 img-fluid"
-                                        alt="Nuevo Ingreso 3">
-                                </div>
-                            </div>
+                            <ul class="row list-unstyled m-0 p-0">
+                                <li class="col-4">
+                                    <figure class="figure w-100 m-0">
+                                        <img src="multimedia/nuevosingresos-misterybox-tablet.png"
+                                            class="figure-img img-fluid d-block w-100 rounded" alt="Caja Sorpresa">
+                                        <figcaption class="figure-caption text-center text-white mt-2">Caja Sorpresa
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li class="col-4">
+                                    <figure class="figure w-100 m-0">
+                                        <img src="multimedia/nuevosingresos-newbalance-tablet.png"
+                                            class="figure-img img-fluid d-block w-100 rounded" alt="New Balance">
+                                        <figcaption class="figure-caption text-center text-white mt-2">Colaboración New
+                                            Balance</figcaption>
+                                    </figure>
+                                </li>
+                                <li class="col-4">
+                                    <figure class="figure w-100 m-0">
+                                        <img src="multimedia/nuevosingresos-taped-tablet.png"
+                                            class="figure-img img-fluid d-block w-100 rounded" alt="Nike SB">
+                                        <figcaption class="figure-caption text-center text-white mt-2">Colaboración con
+                                            Nike</figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselNuevosIngresosTablet"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -180,10 +278,60 @@
                     </button>
                 </div>
 
+                <!-- VISTA DESKTOP (>= 992px) -->
+                <div class="row d-none d-lg-flex g-4 mt-3">
+
+                    <!-- Card 1 -->
+                    <div class="col-lg-4">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <img src="multimedia/nuevosingresos-taped-tablet.png" class="card-img-top rounded-3"
+                                alt="Nike SB Skate Like a Girl">
+                            <div class="card-body text-center px-0">
+                                <h4 class="text-white fw-bold mb-3">Skate Like A Girl x Nike SB</h4>
+                                <a href="#" class="btn btn-custom-teal w-100 rounded-pill fw-bold py-2">
+                                    Añadir al carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-lg-4">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <img src="multimedia/nuevosingresos-newbalance-tablet.png" class="card-img-top rounded-3"
+                                alt="New Balance Collaboration">
+                            <div class="card-body text-center px-0">
+                                <h4 class="text-white fw-bold mb-3">TAPED x New Balance</h4>
+                                <a href="#" class="btn btn-custom-teal w-100 rounded-pill fw-bold py-2">
+                                    Añadir al carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-lg-4">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <img src="multimedia/nuevosingresos-misterybox-tablet.png" class="card-img-top rounded-3"
+                                alt="Nike SB Taped">
+                            <div class="card-body text-center px-0">
+                                <h4 class="text-white fw-bold mb-3">TAPED x Nike SB</h4>
+                                <a href="#" class="btn btn-custom-teal w-100 rounded-pill fw-bold py-2">
+                                    Añadir al carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section class="cool-things-section">
+        <!-- ==========================
+             COOL THINGS (MOBILE Y TABLET)
+             (Se oculta en Desktop >= 992px)
+             ========================== -->
+        <section class="cool-things-section d-lg-none">
             <div class="container-fluid bg-black text-white text-center py-3">
                 <h3 class="collection-title">
                     COLECCIÓN "<span class="text-custom-red">COOL THINGS</span>" YA DISPONIBLE
@@ -208,31 +356,105 @@
             </div>
         </section>
 
-        <section class="nuestras-marcas py-5 bg-black text-white">
+        <!-- ==========================
+                 COOL THINGS (DESKTOP)
+                 (Visible solo en >= 992px)
+                 ========================== -->
+        <section
+            class="cool-things-desktop d-none d-lg-block position-relative overflow-hidden bg-black text-white py-5">
+
+            <!-- Fondo Desktop (nuevosingresos-desktop.png) -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;">
+                <img src="multimedia/nuevosingresos-desktop.png" alt="Fondo Cool Things" class="w-100 h-100"
+                    style="object-fit: cover; opacity: 0.6;">
+            </div>
+
+            <div class="container-fluid position-relative" style="z-index: 1;">
+
+                <!-- Título Grande (H2) -->
+                <div class="text-center mb-5 pt-4">
+                    <h2 class="display-3 fw-bold text-uppercase" style="letter-spacing: 2px;">
+                        COLECCIÓN "<span class="text-custom-red">COOL THINGS</span>" YA DISPONIBLE
+                    </h2>
+                </div>
+
+                <!-- Contenido Visual Desktop -->
+                <div class="cool-things-content-desktop position-relative d-flex justify-content-center align-items-center"
+                    style="min-height: 600px;">
+
+                    <!-- Ticker Superior -->
+                    <div class="ticker-wrap ticker-top position-absolute w-100" style="top: 0;">
+                        <div class="ticker-content display-6">
+                            <span>sneakers</span> <span>sneakers</span> <span>sneakers</span> <span>sneakers</span>
+                            <span>sneakers</span> <span>sneakers</span> <span>sneakers</span> <span>sneakers</span>
+                        </div>
+                    </div>
+
+                    <!-- Elementos Centrales (Mano, Cajas) -->
+                    <div class="position-relative w-100 d-flex justify-content-center">
+
+                        <!-- Caja Azul (Izquierda flotante) -->
+                        <img src="multimedia/cajaazul-desktop.png" alt="Caja Azul Taped"
+                            class="position-absolute img-fluid"
+                            style="left: 15%; top: 50px; width: 250px; transform: rotate(-15deg); z-index: 1;">
+
+                        <!-- Mano Tatuada (Centro) -->
+                        <img src="multimedia/tatuajecamisa-desktop.png" alt="Camiseta TPD Desktop"
+                            class="img-fluid position-relative" style="z-index: 2; max-height: 550px;">
+
+                        <!-- Caja Roja (Derecha flotante) -->
+                        <img src="multimedia/cajaroja-desktop.png" alt="Caja Roja Taped"
+                            class="position-absolute img-fluid"
+                            style="right: 15%; bottom: 50px; width: 280px; transform: rotate(10deg); z-index: 3;">
+                    </div>
+
+                    <!-- Ticker Inferior -->
+                    <div class="ticker-wrap ticker-bottom position-absolute w-100" style="bottom: 0;">
+                        <div class="ticker-content display-6">
+                            <span>COOL CLOTHING</span> <span>COOL CLOTHING</span> <span>COOL CLOTHING</span>
+                            <span>COOL CLOTHING</span> <span>COOL CLOTHING</span> <span>COOL CLOTHING</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================
+             NUESTRAS MARCAS (OCULTO EN DESKTOP)
+             ========================== -->
+        <section class="nuestras-marcas py-5 bg-black text-white d-lg-none">
             <div class="container">
                 <h2 class="section-title text-center mb-4">
                     NUESTRAS MARCAS
                 </h2>
-                <div class="row g-4 align-items-center mb-4 px-3">
-                    <div class="col-4 col-md-2 text-center">
-                        <img src="multimedia/marcas-taped.png" alt="Logo Taped" class="img-fluid brand-logo">
-                    </div>
-                    <div class="col-4 col-md-2 text-center">
-                        <img src="multimedia/hurley-logo.png" alt="Logo Hurley" class="img-fluid brand-logo">
-                    </div>
-                    <div class="col-4 col-md-2 text-center">
-                        <img src="multimedia/newbalance-logo.png" alt="Logo New Balance" class="img-fluid brand-logo">
-                    </div>
-                    <div class="col-4 col-md-2 text-center">
-                        <img src="multimedia/nikesb-logo.png" alt="Logo Nike SB" class="img-fluid brand-logo">
-                    </div>
-                    <div class="col-4 col-md-2 text-center">
-                        <img src="multimedia/vans-logo.png" alt="Logo Vans" class="img-fluid brand-logo">
-                    </div>
-                    <div class="col-4 col-md-2 text-center">
-                        <img src="multimedia/dickies-logo.png" alt="Logo Dickies" class="img-fluid brand-logo">
-                    </div>
-                </div>
+                <ul class="row g-4 align-items-center mb-4 px-3 list-unstyled">
+                    <!-- Logos de marcas -->
+                    <li class="col-4 col-md-2 text-center">
+                        <figure class="figure m-0"><img src="multimedia/marcas-taped.png" alt="Logo Taped"
+                                class="figure-img img-fluid brand-logo"></figure>
+                    </li>
+                    <li class="col-4 col-md-2 text-center">
+                        <figure class="figure m-0"><img src="multimedia/hurley-logo.png" alt="Logo Hurley"
+                                class="figure-img img-fluid brand-logo"></figure>
+                    </li>
+                    <li class="col-4 col-md-2 text-center">
+                        <figure class="figure m-0"><img src="multimedia/newbalance-logo.png" alt="Logo New Balance"
+                                class="figure-img img-fluid brand-logo"></figure>
+                    </li>
+                    <li class="col-4 col-md-2 text-center">
+                        <figure class="figure m-0"><img src="multimedia/nikesb-logo.png" alt="Logo Nike SB"
+                                class="figure-img img-fluid brand-logo"></figure>
+                    </li>
+                    <li class="col-4 col-md-2 text-center">
+                        <figure class="figure m-0"><img src="multimedia/vans-logo.png" alt="Logo Vans"
+                                class="figure-img img-fluid brand-logo"></figure>
+                    </li>
+                    <li class="col-4 col-md-2 text-center">
+                        <figure class="figure m-0"><img src="multimedia/dickies-logo.png" alt="Logo Dickies"
+                                class="figure-img img-fluid brand-logo"></figure>
+                    </li>
+                </ul>
                 <p class="text-center small marcas-texto-fondo col-md-10 col-lg-8 mx-auto">
                     En TAPED podés encontrar una cuidada selección de productos para un estilo de vida activo. Ofrecemos
                     modelos cancheros, coloridos e inspirados en marcas globales que son bastante reconocidas en la
@@ -240,13 +462,16 @@
                 </p>
             </div>
         </section>
-
+        <!-- ==========================
+             PRODUCTOS DESTACADOS
+             ========================== -->
         <section class="productos-destacados py-5 bg-black text-white">
             <div class="container">
-                <h2 class="section-title text-center mb-4">
-                    PRODUCTOS DESTACADOS
-                </h2>
+                <h2 class="section-title text-center mb-4 text-wrap">PRODUCTOS DESTACADOS</h2>
 
+                <!-- ==========================
+                         1. VISTA MOBILE (< 768px)
+                         ========================== -->
                 <div id="carouselDestacados" class="carousel slide d-md-none" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active"
@@ -259,7 +484,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="2000">
                             <div class="card product-card border-0">
-                                <img src="multimedia/skateboard-mobile.png" class="card-img-top img-fluid"
+                                <img src="multimedia/skateboard-mobile.png" class="card-img-top img-fluid w-100"
                                     alt="Patineta Roja Taped">
                                 <div class="card-body">
                                     <h5 class="card-title">Taped Logo Deck</h5>
@@ -269,7 +494,7 @@
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
                             <div class="card product-card border-0">
-                                <img src="multimedia/hoodie-mobile.jpg" class="card-img-top img-fluid"
+                                <img src="multimedia/hoodie-mobile.png" class="card-img-top img-fluid w-100"
                                     alt="Suéter Blanco Taped">
                                 <div class="card-body">
                                     <h5 class="card-title">Taped Premium Hoodie</h5>
@@ -279,7 +504,7 @@
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
                             <div class="card product-card border-0">
-                                <img src="multimedia/boardazul-mobile.jpg" class="card-img-top img-fluid"
+                                <img src="multimedia/boardazul-mobile.jpg" class="card-img-top img-fluid w-100"
                                     alt="Patineta Azul Taped">
                                 <div class="card-body">
                                     <h5 class="card-title">"Wave" Series Deck</h5>
@@ -290,54 +515,198 @@
                     </div>
                 </div>
 
-                <div class="row d-none d-md-flex g-4">
-                    <div class="col-md-4">
-                        <div class="card product-card-grid border-0">
-                            <img src="multimedia/skateboard-mobile.png" class="card-img-top img-fluid"
+                <!-- ==========================
+                         2. VISTA TABLET (>= 768px y < 992px)
+                         (Oculto en Desktop con d-lg-none)
+                         ========================== -->
+                <ul class="row d-none d-md-flex d-lg-none g-4 list-unstyled m-0 p-0">
+                    <li class="col-md-4">
+                        <div class="card product-card-grid border-0 h-100">
+                            <img src="multimedia/skateboard-tablet.png" class="card-img-top img-fluid w-100"
                                 alt="Patineta Roja Taped">
                             <div class="card-body">
                                 <h5 class="card-title">Taped Logo Deck</h5>
                                 <p class="card-text fw-bold">$85.00</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card product-card-grid border-0">
-                            <img src="multimedia/hoodie-mobile.jpg" class="card-img-top img-fluid"
+                    </li>
+                    <li class="col-md-4">
+                        <div class="card product-card-grid border-0 h-100">
+                            <img src="multimedia/hoodie-tablet.jpg" class="card-img-top img-fluid w-100"
                                 alt="Suéter Blanco Taped">
                             <div class="card-body">
                                 <h5 class="card-title">Taped Premium Hoodie</h5>
                                 <p class="card-text fw-bold">$120.00</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card product-card-grid border-0">
-                            <img src="multimedia/boardazul-mobile.jpg" class="card-img-top img-fluid"
+                    </li>
+                    <li class="col-md-4">
+                        <div class="card product-card-grid border-0 h-100">
+                            <img src="multimedia/boardazul-tablet.png" class="card-img-top img-fluid w-100"
                                 alt="Patineta Azul Taped">
                             <div class="card-body">
                                 <h5 class="card-title">"Wave" Series Deck</h5>
                                 <p class="card-text fw-bold">$95.00</p>
                             </div>
                         </div>
+                    </li>
+                </ul>
+
+                <!-- ==========================
+                         3. VISTA DESKTOP (>= 992px)
+                         Carrusel Centrado (4 items)
+                         ========================== -->
+                <div class="d-none d-lg-block">
+                    <!-- Contenedor centrado y un poco más pequeño (col-lg-10) -->
+                    <div class="col-lg-10 mx-auto">
+
+                        <div id="carouselDestacadosDesktop" class="carousel slide carousel-fade"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner">
+
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active" data-bs-interval="5000">
+                                    <div class="row g-4">
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/skateboard-tablet.png" class="card-img-top w-100"
+                                                    alt="Patineta Roja">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">Side A
+                                                        Collection - Decks</h6>
+                                                    <p class="card-text small fw-bold">$50.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/nuevosingresos-misterybox-tablet.png"
+                                                    class="card-img-top w-100" alt="Caja Misteriosa">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">Mistery Shoe Box
+                                                        Drop</h6>
+                                                    <p class="card-text small fw-bold">$100.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/hoodie-tablet.jpg" class="card-img-top w-100"
+                                                    alt="Hoodie">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">Oversized Hoodie
+                                                    </h6>
+                                                    <p class="card-text small fw-bold">$60.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/boardazul-tablet.png" class="card-img-top w-100"
+                                                    alt="Patineta Azul">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">Rewind Series -
+                                                        Decks</h6>
+                                                    <p class="card-text small fw-bold">$55.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-item" data-bs-interval="5000">
+                                    <div class="row g-4">
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/nuevosingresos-newbalance-tablet.png"
+                                                    class="card-img-top w-100" alt="New Balance">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">NB Numeric 440
+                                                    </h6>
+                                                    <p class="card-text small fw-bold">$110.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/nuevosingresos-taped-tablet.png"
+                                                    class="card-img-top w-100" alt="Nike SB">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">Nike SB Dunk Low
+                                                    </h6>
+                                                    <p class="card-text small fw-bold">$130.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/skateboard-tablet.png" class="card-img-top w-100"
+                                                    alt="Patineta Roja">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">Side A
+                                                        Collection</h6>
+                                                    <p class="card-text small fw-bold">$50.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card product-card-grid border-0 h-100">
+                                                <img src="multimedia/hoodie-tablet.jpg" class="card-img-top w-100"
+                                                    alt="Hoodie">
+                                                <div class="card-body p-2">
+                                                    <h6 class="card-title small fw-bold text-uppercase">Basic Hoodie
+                                                    </h6>
+                                                    <p class="card-text small fw-bold">$60.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Flechas de Navegación (Posicionadas a los costados negativos para salir del bloque) -->
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselDestacadosDesktop" data-bs-slide="prev"
+                                style="width: 5%; margin-left: -6%;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselDestacadosDesktop" data-bs-slide="next"
+                                style="width: 5%; margin-right: -6%;">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <!-- Texto inferior -->
+                        <p class="text-center mt-4 mb-0 fs-5 fw-light">
+                            Nuevos drops, ediciones limitadas y clásicos que no fallan.
+                        </p>
+
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <section class="newsletter-section bg-custom-red py-5 text-white">
+        <!-- ==========================================
+             NEWSLETTER (MOBILE Y TABLET)
+             Fondo Rojo, Centrado. Se oculta en Desktop.
+             ========================================== -->
+        <section class="newsletter-section bg-custom-red py-5 text-white d-lg-none">
             <div class="container text-center">
                 <h2 class="newsletter-title">NEWSLETTER</h2>
                 <p class="newsletter-subtitle mb-4">
                     Suscribite y obtené 10% OFF para tu primera compra. Además de enterarte de los nuevos lanzamientos y
                     promociones especiales.
                 </p>
-
                 <form class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6">
                         <div class="input-group">
-                            <input type="email" class="form-control newsletter-input" id="emailInput"
+                            <input type="email" class="form-control newsletter-input" id="emailInputMobile"
                                 placeholder="Ingresá tu email...">
                             <button type="submit" class="btn btn-newsletter-submit">Enviar</button>
                         </div>
@@ -345,30 +714,85 @@
                 </form>
             </div>
         </section>
+
+        <!-- ==========================================
+             NEWSLETTER (DESKTOP)
+             Fondo Rojo, Centrado. Se oculta en Desktop.
+             ========================================== -->
+
+        <section class="newsletter-desktop py-5 d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6 pe-lg-5">
+                        <h2 class="newsletter-title-desktop mb-4">NEWSLETTER</h2>
+                        <p class="lead mb-4">
+                            Suscribite y obtené 10% OFF para tu primera compra. Además de enterarte de los nuevos
+                            lanzamientos y promociones especiales.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-5 offset-lg-1 d-flex flex-column align-items-center position-relative">
+
+                        <img src="multimedia/casseteazul.png" alt="Cassette Taped" class="newsletter-cassette-img">
+
+                        <form class="w-100 position-relative" style="z-index: 2;">
+
+                            <div class="position-relative mb-3">
+                                <div class="newsletter-avatar">
+                                    <img src="multimedia/avatar-newsletter.png" alt="Avatar"
+                                        onerror="this.style.display='none'">
+                                </div>
+
+                                <input type="email" class="form-control newsletter-input-desktop"
+                                    placeholder="Ingresá tu email...">
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn newsletter-btn-desktop">
+                                    ENVIAR
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer-section bg-custom-blue py-4">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <!-- ==========================
+     FOOTER
+========================== -->
+        <footer class="footer-section bg-custom-blue py-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
 
-            <div class="mb-3 mb-md-0">
-                <img src="multimedia/iso-footer.png" alt="Isotipo Taped" class="footer-logo">
+                <!-- Logo único: visible en mobile, tablet y desktop -->
+                <div class="mb-3 mb-md-0">
+                    <img src="multimedia/iso-footer.png" alt="Isotipo Taped" class="footer-logo">
+                </div>
+
+                <div class="text-center mb-3 mb-md-0">
+                    <p class="footer-text fs-6 fs-lg-4">© 2025 TAPED. Todos los derechos reservados.</p>
+                    <p class="footer-text fs-6 fs-lg-4">Hecho por Johana Dávila, Diseño Multimedial DMN2BV</p>
+                </div>
+
+                <div class="footer-social-icons">
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                </div>
+
             </div>
+        </footer>
 
-            <div class="text-center mb-3 mb-md-0">
-                <p class="footer-text">© 2025 TAPED. Todos los derechos reservados.</p>
-                <p class="footer-text">
-                    Hecho por Johana Dávila, Diseño Multimedial DMN2BV
-                </p>
-            </div>
-
-            <div class="footer-social-icons">
-                <a href="https://www.instagram.com" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.Facebook.com" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.x.com" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a> </div>
-        </div>
-    </footer>
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-</body>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+    </body>
 
 </html>
