@@ -8,4 +8,4 @@ Comisión: DMN2BV
 
 Profesora: Florencia Coda
 
-Link de Deploy:  NOT YET
+Link de Deploy: https://tapedba.netlify.app/
